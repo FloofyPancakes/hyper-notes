@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Navbar, Nav, Container } from 'react-bootstrap';
 function Header() {
   return (
-    <Navbar expand="lg" variant="light" bg="light">
+    <Navbar expand="lg" variant="dark" bg="dark">
       <Container>
         <Navbar.Brand href="#">Navbar</Navbar.Brand>
       </Container>
