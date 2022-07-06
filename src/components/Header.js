@@ -9,6 +9,7 @@ import { BsPlus} from "react-icons/bs";
 import { BsArrowUpRight} from "react-icons/bs";
 import { BsFillFileEarmarkFill } from "react-icons/bs";
 import { BsFillTerminalFill } from "react-icons/bs";
+import { BsGearFill } from "react-icons/bs";
 function Header() {
   return (
     <Navbar expand="lg" bg="light" variant="light">
@@ -23,6 +24,7 @@ function Header() {
           </Nav>
         </Navbar.Collapse>
         
+        <Button variant="outline-secondary"> <BsGearFill/> </Button>
       </Container>
 
     </Navbar>
