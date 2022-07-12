@@ -13,7 +13,7 @@ function Header() {
   return (
     <Navbar expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#home">Hyper Notes</Navbar.Brand>
+        <Navbar.Brand href="#home"><span style={{fontSize: "25px"}}>Hyper Notes</span></Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <div className="p-2">
@@ -36,8 +36,4 @@ function Header() {
   );
 }
     
-// .ml-0 {
-
-// }
-
 export default Header;
