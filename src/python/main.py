@@ -45,4 +45,3 @@ def link(linkfile: str, bubble1: str, bubble2: str):
     links = open(linkfile, 'a')
     links.write(bubble1 + ' / ' + bubble2)
 
-add_to_workspace('test.txt', 'test2.txt')
