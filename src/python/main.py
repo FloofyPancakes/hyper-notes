@@ -6,7 +6,7 @@ if not os.path.exists('filedata'):
 os.chdir('filedata')
 
 def cut_bubble(bubble: str, line: int):
-    #Function takes file name and where it will get split, then splits the file into 2 halves based on the integer provided
+    # Function takes file name and where it will get split, then splits the file into 2 halves based on the integer provided
 
     bubbleName = bubble[:bubble.rfind('.')]
     bubbleExt = bubble[bubble.rfind('.'):]
@@ -45,3 +45,31 @@ def link(linkfile: str, bubble1: str, bubble2: str):
     links = open(linkfile, 'a')
     links.write(bubble1 + ' / ' + bubble2)
 
+def links_to_dict(linkfile: str) -> dict:
+    # Turns the edgelist into a dict of every item and the set of links it's connected to for easy navigation
+    file = open(linkfile, 'r')
+    dtc = {}
+
+    line = file.readline()
+    while not line == '':
+        line = ''.join(line.split('\n'))
+        currentLink = line.split(' / ') 
+        if not currentLink[0] in dtc:
+            dtc[currentLink[0]] = set()
+        dtc[currentLink[0]].add(currentLink[1])
+        line = file.readline()
+        file.close()
+    return dtc
+
+def delete_item(linkfile: str, filename: str):
+    # Will delete a file by name and remove all references from the edgelist
+    if os.path.isfile(filename):
+        os.remove(filename)
+    file = open(linkfile, 'r')
+    lines = file.readlines()
+    file.close()
+    file = open(linkfile, 'w')
+    for line in lines:
+        if not filename in line:
+            file.write(line)
+    file.close()
